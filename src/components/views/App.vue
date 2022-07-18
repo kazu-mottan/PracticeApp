@@ -1,6 +1,6 @@
 
 <script>
-import MainTitle from './parts/MainTitle.vue'
+import MainTitle from '../parts/MainTitle.vue'
 export default {
   name: 'App',
   components: {
