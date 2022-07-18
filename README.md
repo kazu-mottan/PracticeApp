@@ -1,12 +1,14 @@
-# Untitled
+# PracticeApp
+
+## About
 
 
+
+-----
 ## Individual setup
 ```
 $ npm -g install @vue/cli
 ```
-
-
 
 ## Project setup
 ```
