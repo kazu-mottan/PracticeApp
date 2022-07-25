@@ -19,8 +19,8 @@
                 <UserText/>
                 <UserPass/>
                 <v-layout wrap>
-                  <selectLanguage/>
-                  <selectCountry/>
+                    <selectLanguage/>
+                    <selectCountry/>
                 </v-layout>
                 <MovieSelect/>
               </v-form>
