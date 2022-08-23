@@ -18,8 +18,12 @@
               <v-form>
                 <UserText/>
                 <UserPass/>
+                <v-layout wrap>
+                  <selectLanguage/>
+                  <selectCountry/>
+                </v-layout>
                 <MovieSelect/>
-                </v-form>
+              </v-form>
               </v-card-text>
             </v-card>
           </v-app>
@@ -37,6 +41,8 @@ import MainTitle from '../parts/MainTitle.vue'
 import MovieSelect from '../parts/MovieSelect.vue'
 import UserPass from '../parts/UserPass.vue'
 import UserText from '../parts/UserText.vue'
+import selectCountry from '../parts/selectCountry.vue'
+import selectLanguage from '../parts/selectLanguage.vue'
 
 export default {
   name: 'App',
@@ -45,7 +51,9 @@ export default {
     MainTitle,
     MovieSelect,
     UserText,
-    UserPass
+    UserPass,
+    selectCountry,
+    selectLanguage
   },
 
   data: () => ({
