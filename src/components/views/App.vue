@@ -19,10 +19,11 @@
                 <UserText/>
                 <UserPass/>
                 <v-layout wrap>
-                  <selectLanguage/>
-                  <selectCountry/>
+                    <selectLanguage/>
+                    <selectCountry/>
                 </v-layout>
                 <MovieSelect/>
+                <Submit/>
               </v-form>
               </v-card-text>
             </v-card>
@@ -30,9 +31,7 @@
         </v-col>
         </v-row>
       </v-container>
-
     </v-main>
-    
   </v-app>
 </template>
 
@@ -43,6 +42,7 @@ import UserPass from '../parts/UserPass.vue'
 import UserText from '../parts/UserText.vue'
 import selectCountry from '../parts/selectCountry.vue'
 import selectLanguage from '../parts/selectLanguage.vue'
+import Submit from '../parts/Submit.vue'
 
 export default {
   name: 'App',
@@ -53,7 +53,8 @@ export default {
     UserText,
     UserPass,
     selectCountry,
-    selectLanguage
+    selectLanguage,
+    Submit
   },
 
   data: () => ({
