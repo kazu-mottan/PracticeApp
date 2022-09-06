@@ -3,7 +3,7 @@
         depressed
         color="primary"
         class="mx-auto"
-        >
+    >
         Submit
     </v-btn>
 </template>
