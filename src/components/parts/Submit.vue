@@ -3,6 +3,8 @@
         depressed
         color="primary"
         class="mx-auto"
+        @click="submitevent"
+        validate
     >
         Submit
     </v-btn>
@@ -10,6 +12,6 @@
 
 <script>
 export default {
-    name: 'Submit'
+    name: 'Submit',
 }
 </script>

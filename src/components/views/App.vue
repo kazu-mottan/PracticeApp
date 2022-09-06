@@ -1,36 +1,7 @@
 <template>
   <v-app>
-    <MainTitle/>
     <v-main>
-      <v-container class="grey lighten-5">
-        <v-row class="mb-6" no-gutters>
-        <v-col>
-          <!-- v-imgはコンポーネント化する -->
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-          >
-          </v-img>
-        </v-col>
-        <v-col>
-          <v-app>
-            <v-card>
-              <v-card-text>
-              <v-form>
-                <UserText/>
-                <UserPass/>
-                <v-layout wrap>
-                    <selectLanguage/>
-                    <selectCountry/>
-                </v-layout>
-                <MovieSelect/>
-                <Submit/>
-              </v-form>
-              </v-card-text>
-            </v-card>
-          </v-app>
-        </v-col>
-        </v-row>
-      </v-container>
+      <router-view />
     </v-main>
   </v-app>
 </template>
@@ -58,7 +29,7 @@ export default {
   },
 
   data: () => ({
-    //
+    
   }),
 }
 </script>
