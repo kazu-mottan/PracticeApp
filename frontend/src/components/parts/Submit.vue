@@ -4,7 +4,7 @@
         color="primary"
         class="mx-auto"
         @click="submitevent"
-        validate
+        
     >
         Submit
     </v-btn>

@@ -12,7 +12,7 @@
               <v-card>
                 <v-card-text>
                 <v-form ref="form" v-model="valid" lazy-validation>
-                  <UserText :counter="10" :rules="nameRules"/>
+                  <UserText :counter="10" :rules="nameRules" />
                   <UserPass/>
                   <v-layout wrap>
                       <selectLanguage/>
