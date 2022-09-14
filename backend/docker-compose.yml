@@ -3,23 +3,33 @@ version: "3"
 services:
   mysql:
     image: mysql:latest
+    env_file: ./mysql/.env_mysql.env
     container_name: mysql_container
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: login
-      TZ: "Asia/Tokyo"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      TZ: ${TZ}
     volumes:
       - ./my.cnf:/etc/mysql/conf.d/my.cnf
       - ./init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
-  api:
+  proxy:
+    image: nginx:1.21-alpine
+    container_name: next-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - node
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  app:
     image: node:14.16.0-buster
     environment:
       - MYSQL_SERVER=db
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASS}
-      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
       - TZ=${TZ}
       - CHOKIDAR_USEPOLLING=true
 
