@@ -7,7 +7,7 @@
 -----
 ## Individual setup
 ```
-$ npm -g install @vue/cli
+npm -g install @vue/cli
 ```
 
 ## Project setup
