@@ -1,20 +1,11 @@
-<!-- <template>
+<template>
     <div>
         <iframe
-            width="1200" 
-            height="700"
-            src="https://www.youtube.com/embed/I4ehUn3582o"
+            width="1000" 
+            height="500"
+            :src="resultUrl"
         ></iframe>
     </div>
-</template> -->
-
-<!-- APIからデータをJSONで取得することはできたが、画面上にうまく表示できていない -->
-<template>
-    <!-- <a v-bind:href="result[0].snippet.thumbnails.maxres.url">
-    </a> -->
-    <!-- <img v-bind:src="result.snippet.thumbnails.maxres.url"/> -->
-    <!-- v-bind:href="'https://www.youtube.com/watch?v=' + result.id" -->
-    <div>{{ result }}</div>
 </template>
 
 <script>
@@ -24,7 +15,8 @@ export default {
     name: 'VideoDisplay',
     data() {
         return {
-            result: []
+            result: [],
+            resultUrl:""
         }
     },
     mounted() {
@@ -43,10 +35,11 @@ export default {
             })
             .then((res) => {
                 console.log(res)
-                this.result = res.data.items
+                this.result = res.data.items[0].id
+                this.resultUrl = `https://www.youtube.com/embed/${this.result}`
             })
             .catch((err) => {
-                console.log(err.response.data);
+                console.log(err);
             })
         }
 }
