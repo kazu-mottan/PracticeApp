@@ -43,6 +43,7 @@
     import selectCountry from '../parts/selectCountry.vue'
     import selectLanguage from '../parts/selectLanguage.vue'
     import Submit from '../parts/Submit.vue'
+    import * as api from "../../db-util/index"
     
     export default {
       name: 'App',
@@ -78,8 +79,12 @@
         },
         submitevent:function(){
             this.$refs.form.validate();
-            // this.$router.push('/video');
-        }
+            this.$router.push('/video');
+            api.registerUser(userId).then((score) => {
+              console.log(score);
+            });
+        },
+
       }
 
     }
