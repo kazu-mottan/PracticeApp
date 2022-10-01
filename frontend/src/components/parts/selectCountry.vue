@@ -3,7 +3,7 @@
         :items="items"
         label="Select your country"
         :rules="[v => !!v || 'Item is required']"
-        required,
+        required
     ></v-select>
 </template>
 
