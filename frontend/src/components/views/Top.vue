@@ -12,20 +12,20 @@
               <v-card>
                 <v-card-text>
                 <v-form ref="form" v-model="valid" lazy-validation>
-                  <UserText :counter="10" :rules="nameRules" />
-                  <UserPass/>
+                  <UserTextField :counter="10" :rules="nameRules" />
+                  <UserPassField/>
                   <v-layout wrap>
-                      <selectLanguage/>
-                      <selectCountry/>
+                      <SelectLanguage/>
+                      <SelectCountry/>
                   </v-layout>
-                  <MovieSelect/>
+                  <SelectMovie/>
                 <v-checkbox
                 v-model="checkbox"
                 :rules="[v => !!v || 'You must agree to continue!']"
                 label="Do you agree?"
                 required
                 ></v-checkbox>
-                  <Submit :disabled="!valid" @click="submitevent" />
+                  <SubmitButton :disabled="!valid" @click="SubmitButtonevent" />
                 </v-form>
                 </v-card-text>
               </v-card>
@@ -37,24 +37,24 @@
 
 <script>
     import MainTitle from '../parts/MainTitle.vue'
-    import MovieSelect from '../parts/MovieSelect.vue'
-    import UserPass from '../parts/UserPass.vue'
-    import UserText from '../parts/UserText.vue'
-    import selectCountry from '../parts/selectCountry.vue'
-    import selectLanguage from '../parts/selectLanguage.vue'
-    import Submit from '../parts/Submit.vue'
+    import SelectMovie from '../parts/SelectMovie.vue'
+    import UserPassField from '../parts/UserPassField.vue'
+    import UserTextField from '../parts/UserTextField.vue'
+    import SelectCountry from '../parts/SelectCountry.vue'
+    import SelectLanguage from '../parts/SelectLanguage.vue'
+    import SubmitButton from '../parts/SubmitButton.vue'
     
     export default {
       name: 'App',
     
       components: {
         MainTitle,
-        MovieSelect,
-        UserText,
-        UserPass,
-        selectCountry,
-        selectLanguage,
-        Submit
+        SelectMovie,
+        UserTextField,
+        UserPassField,
+        SelectCountry,
+        SelectLanguage,
+        SubmitButton
       },
     
       data: () => ({
@@ -76,7 +76,7 @@
         validate(){
             this.$refs.form.validate();
         },
-        submitevent:function(){
+        SubmitButtonevent:function(){
             this.$refs.form.validate();
             // this.$router.push('/video');
         }
