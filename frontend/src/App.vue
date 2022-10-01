@@ -8,24 +8,24 @@
 
 <script>
 import MainTitle from './components/parts/MainTitle.vue'
-import MovieSelect from './components/parts/MovieSelect.vue'
-import UserPass from './components/parts/UserPass.vue'
-import UserText from './components/parts/UserText.vue'
-import selectCountry from './components/parts/selectCountry.vue'
-import selectLanguage from './components/parts/selectLanguage.vue'
-import Submit from './components/parts/Submit.vue'
+import SelectMovie from './components/parts/SelectMovie.vue'
+import UserPassField from './components/parts/UserPassField.vue'
+import UserTextField from './components/parts/UserTextField.vue'
+import SelectCountry from './components/parts/SelectCountry.vue'
+import SelectLanguage from './components/parts/SelectLanguage.vue'
+import SubmitButton from './components/parts/SubmitButton.vue'
 
 export default {
   name: 'App',
 
   components: {
     MainTitle,
-    MovieSelect,
-    UserText,
-    UserPass,
-    selectCountry,
-    selectLanguage,
-    Submit
+    SelectMovie,
+    UserTextField,
+    UserPassField,
+    SelectCountry,
+    SelectLanguage,
+    SubmitButton
   },
 
   data: () => ({

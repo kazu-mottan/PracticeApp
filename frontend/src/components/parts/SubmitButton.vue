@@ -3,7 +3,7 @@
         depressed
         color="primary"
         class="mx-auto"
-        @click="submitevent"
+        @click="submitButtonEvent"
         
     >
         Submit
@@ -12,6 +12,6 @@
 
 <script>
 export default {
-    name: 'Submit',
+    name: 'SubmitButton',
 }
 </script>
