@@ -48,6 +48,7 @@ import UserTextField from "../parts/UserTextField.vue";
 import SelectCountry from "../parts/SelectCountry.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
+import * as api from "../../db-util/index"
 export default {
   name: "App",
   components: {
@@ -80,6 +81,9 @@ export default {
     submitEvent: function () {
       this.$refs.form.validate();
       this.$router.push("/videoPage");
+      api.registerUser(userId).then((score) => {
+              console.log(score);
+      });
     },
   },
 };
