@@ -35,7 +35,7 @@ Untitled
 - parts
   - ロジック(計算)が無いUIコンポーネント
   - スタイルを伴う
-- Templates
+- templates
   - partsレイヤーとtemplatesレイヤーに依存
   - 部分的に切り出した範囲内のレイアウトからコンポーネントごとに依存するロジックを処理する
 - views
