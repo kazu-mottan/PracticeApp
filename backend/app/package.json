@@ -2,13 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "- node.js - docker(mysql)",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mysql": "^2.18.1"
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
   }
 }
