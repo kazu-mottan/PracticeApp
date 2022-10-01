@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: 'UserText',
+  name: 'UserTextField',
   props:{
     name: { type: String, required: true },
   }

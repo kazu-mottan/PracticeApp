@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'MovieSelect',
+  name: 'SelectMovie',
   data: () => ({
     items: ['Travel', 'Game', 'Legal', 'FooBuzz'],
   }),
