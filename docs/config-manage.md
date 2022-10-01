@@ -32,6 +32,7 @@ Untitled
 - Atomic Designを用いたコンポーネント管理を行う
 
 ### components
+URL: https://zenn.dev/offers/articles/20220523-component-design-best-practice
 - parts
   - ロジック(計算)が無いUIコンポーネント
   - スタイルを伴う
