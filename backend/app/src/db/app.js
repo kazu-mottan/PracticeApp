@@ -31,6 +31,28 @@ app.get('/sql-data',async(req,res)=>{
   })
 })
 
+app.post('/userinput',async(req,res)=>{
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+  const lang = req.body.lang;
+  const genre = req.body.genre;
+  const country = req.body.country;
+  const sql = `INSERT INTO deetube.userdb(username,country,lang,genre) VALUES ('${name}','${password}','${lang}','${genre}')`;
+  // con.query()でsql文を実行して結果をresultに格納する
+  await connection.query(sql, (err, result) => {
+    // エラーが発生した場合はエラーメッセージを返す
+    if(err) {
+      return res.status(400).json({"error": err.message})
+    }
+    
+    // エラーが発生しなかった場合はsql文で取得したデータを返す
+    return res.json(result)
+    req.body.name
+  })
+})
+
+
 app.listen(8080, HOST, () => {
   console.log(`Listening on port ${PORT}`)
 })
