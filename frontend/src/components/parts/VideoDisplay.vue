@@ -1,5 +1,8 @@
 <template>
     <div>
+        <p> {{title}} </p>
+        <p> {{viewCount}}views・{{date}} </p>
+        <p> {{likeCount}}likes</p>
         <iframe
             width="1000" 
             height="500"
@@ -16,7 +19,11 @@ export default {
     data() {
         return {
             result: [],
-            resultUrl:""
+            resultUrl:"",
+            title: "",
+            date: "",
+            viewCount: "",
+            likeCount: ""
         }
     },
     mounted() {
@@ -28,8 +35,6 @@ export default {
             params: {
                 part: 'snippet',
                 id: 'I4ehUn3582o',
-                // chart: 'mostPopular',
-                // regionCode: 'JP',
                 key: KEY
                 }
             })
@@ -37,10 +42,34 @@ export default {
                 console.log(res)
                 this.result = res.data.items[0].id
                 this.resultUrl = `https://www.youtube.com/embed/${this.result}`
+                this.title = res.data.items[0].snippet.title
+                const publishedDate = res.data.items[0].snippet.publishedAt
+                this.fixDate(publishedDate)
+            })
+            .catch((err) => {
+                console.log(err);
+            }),
+        youtube.get('/videos', {
+            params: {
+                part: 'statistics',
+                id: 'I4ehUn3582o',
+                key: KEY
+                }
+            })
+            .then((res) => {
+                console.log(res)
+                this.viewCount = res.data.items[0].statistics.viewCount
+                this.likeCount = res.data.items[0].statistics.likeCount
             })
             .catch((err) => {
                 console.log(err);
             })
+    },
+    methods: {
+        fixDate(publishedDate) {
+            // publishedAt: "2022-09-03T23:00:05Z"がデフォルトで表示されるため、正規表現で2022/09/03に整形している
+            this.date = publishedDate.slice(0, 10).replace(/-/g, '/')
         }
+    }
 }
 </script>
