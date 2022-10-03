@@ -1,10 +1,13 @@
 <template>
     <v-app>
         <MainTitle/>
+        <v-row>
+        <v-col>
+        <v-card height="1500">
         <v-main>
         <v-container class="lime lighten-5" fluid>
-        <v-row align-content="center">
-            <v-col align-self="center">
+        <v-row>
+            <v-col>
                 <v-card>
                 <v-card-text>
                 <v-form>
@@ -13,7 +16,7 @@
                 </v-card-text>
                 </v-card>
             </v-col>
-            <v-col align-self="center">
+            <v-col>
                 <v-card>
                 <v-card-text>
                 <v-form>
@@ -25,8 +28,11 @@
         </v-row>
         </v-container>
         </v-main>
+        </v-card>
+        </v-col>
+        </v-row>
     </v-app>
-    </template>
+</template>
 
 <script>
 import VideoDisplay from '../parts/VideoDisplay.vue'
