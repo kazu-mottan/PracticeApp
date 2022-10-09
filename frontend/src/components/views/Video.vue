@@ -3,7 +3,7 @@
         <MainTitle/>
         <v-row>
         <v-col>
-        <v-card height="1500">
+        <v-card>
         <v-main>
         <v-container class="lime lighten-5" fluid>
         <v-row>
