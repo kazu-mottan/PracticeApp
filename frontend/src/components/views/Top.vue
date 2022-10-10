@@ -18,7 +18,7 @@
           <v-card>
             <v-card-text>
               <v-form ref="form" v-model="valid" lazy-validation>
-                <UserTextField :counter="10" :rules="nameRules" />
+                <UserTextField :rules="nameRules" />
                 <UserPassField />
                 <v-layout wrap>
                   <SelectLanguage style="width: 45%"/>
@@ -48,7 +48,7 @@ import UserTextField from "../parts/UserTextField.vue";
 import SelectCountry from "../parts/SelectCountry.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
-import * as api from "../../db-util/index"
+import * as api from "../../db-utils/index.js"
 export default {
   name: "App",
   components: {
@@ -76,10 +76,9 @@ export default {
   }),
   methods: {
     validate() {
-      this.$refs.form.validate();
+      this.$refs.form.submitEvent();
     },
     submitEvent: function () {
-      this.$refs.form.validate();
       this.$router.push("/videoPage");
       api.registerUser(userId).then((score) => {
               console.log(score);

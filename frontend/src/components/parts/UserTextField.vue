@@ -1,5 +1,5 @@
-<template>  
-    <v-text-field label="UserName" v-model="name" :type="type" :name="name" :value="value"/>
+<template>
+    <v-text-field label="UserName" v-model="name" :counter="10" required/>
 </template>
 
 
