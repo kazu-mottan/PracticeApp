@@ -80,7 +80,8 @@ export default {
     },
     submitEvent: function () {
       this.$router.push("/video");
-      api.registerUser(userId).then((score) => {
+      //registerUser()の引数のuserIDを削除
+      api.registerUser().then((score) => {
               console.log(score);
       });
     },

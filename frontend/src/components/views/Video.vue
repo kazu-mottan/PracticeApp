@@ -33,8 +33,6 @@
   import VideoCommentSubmit from "../parts/VideoCommentSubmit.vue";
   
   export default {
-    name: "Video",
-  
     components: {
       VideoDisplay,
       VideoComment,
