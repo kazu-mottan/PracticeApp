@@ -2,8 +2,7 @@
     <v-btn 
         depressed
         color="primary"
-        class="mx-auto"
-        @click="submitButtonEvent"
+        @click="SubmitButtonEvent"
         
     >
         Submit

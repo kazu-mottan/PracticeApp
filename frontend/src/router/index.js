@@ -5,12 +5,12 @@ const router = createRouter({
     {
       path: "/",
       name: "Top",
-      component: () => import("../components/views/Top.vue"),
+      component: () => import("../components/views/TopPage.vue"),
     },
     {
       path: "/video",
       name: "Video",
-      component: () => import("../components/views/Video.vue"),
+      component: () => import("../components/views/VideoPage.vue"),
     }
   ],
 });

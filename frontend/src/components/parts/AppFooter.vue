@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-footer color="pink light-4" padless app>
-      <v-row justify="center" no-gutters>
+    <v-footer color="pink light-4" padless>
+      <v-row justify="center">
         <v-btn
           v-for="link in links"
           :key="link"

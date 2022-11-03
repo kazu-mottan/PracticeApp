@@ -31,7 +31,7 @@
                   label="Do you agree?"
                   required
                 ></v-checkbox>
-                <SubmitButton :disabled="!valid" @click="submitEvent" />
+                <SubmitButton class="mx-auto" :disabled="!valid" @click="submitEvent" />
               </v-form>
             </v-card-text>
           </v-card>
@@ -45,7 +45,7 @@
 import SelectMovie from "../parts/SelectMovie.vue";
 import UserPassField from "../parts/UserPassField.vue";
 import UserTextField from "../parts/UserTextField.vue";
-import SelectCountry from "../parts/SelectCountry.vue";
+import SelectCountry from "../parts/selectCountry.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
 import * as api from "../../db-utils/index.js"
@@ -79,8 +79,9 @@ export default {
       this.$refs.form.submitEvent();
     },
     submitEvent: function () {
-      this.$router.push("/videoPage");
-      api.registerUser(userId).then((score) => {
+      this.$router.push("/video");
+      //registerUser()の引数のuserIDを削除
+      api.registerUser().then((score) => {
               console.log(score);
       });
     },
