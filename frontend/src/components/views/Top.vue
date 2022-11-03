@@ -31,7 +31,7 @@
                   label="Do you agree?"
                   required
                 ></v-checkbox>
-                <SubmitButton :disabled="!valid" @click="submitEvent" />
+                <SubmitButton class="mx-auto" :disabled="!valid" @click="submitEvent" />
               </v-form>
             </v-card-text>
           </v-card>
@@ -79,7 +79,7 @@ export default {
       this.$refs.form.submitEvent();
     },
     submitEvent: function () {
-      this.$router.push("/videoPage");
+      this.$router.push("/video");
       api.registerUser(userId).then((score) => {
               console.log(score);
       });

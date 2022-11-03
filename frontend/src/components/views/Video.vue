@@ -1,53 +1,49 @@
 <template>
     <v-app>
-        <MainTitle/>
-        <v-row>
-        <v-col>
-        <v-card>
-        <v-main>
-        <v-container class="lime lighten-5" fluid>
-        <v-row>
+      <MainTitle />
+      <v-main>
+        <v-container class="lime lighten-5" fluid fill-height>
+          <v-row>
             <v-col>
-                <v-card>
+              <v-card>
                 <v-card-text>
-                <v-form>
-                    <VideoDisplay/>
-                </v-form>
+                  <VideoDisplay />
+                  <VideoCommentSubmit />
                 </v-card-text>
-                </v-card>
+              </v-card>
             </v-col>
             <v-col>
-                <v-card>
+              <v-card>
                 <v-card-text>
-                <v-form>
-                    <VideoComment/>
-                </v-form>
+                  <v-form>
+                    <VideoComment />
+                  </v-form>
                 </v-card-text>
-                </v-card>
+              </v-card>
             </v-col>
-        </v-row>
+          </v-row>
         </v-container>
-        </v-main>
-        </v-card>
-        </v-col>
-        </v-row>
+      </v-main>
     </v-app>
-</template>
-
-<script>
-import VideoDisplay from '../parts/VideoDisplay.vue'
-import VideoComment from '../parts/VideoComment.vue'
-
-export default {
-name: 'Video',
-
-components: {
-    VideoDisplay,
-    VideoComment
-},
-
-data: () => ({
-    //
-}),
-}
-</script>
+  </template>
+  
+  <script>
+  import VideoDisplay from "../parts/VideoDisplay.vue";
+  import VideoComment from "../parts/VideoComment.vue";
+  import VideoCommentSubmit from "../parts/VideoCommentSubmit.vue";
+  
+  export default {
+    name: "Video",
+  
+    components: {
+      VideoDisplay,
+      VideoComment,
+      VideoCommentSubmit,
+    },
+  
+    data: () => ({
+      //
+    }),
+  };
+  </script>
+  
