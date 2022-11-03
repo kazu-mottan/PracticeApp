@@ -1,10 +1,10 @@
 import * as axios from "axios";
 const host = "http://localhost:8080/";
-const headers ={
-    "Content-Type": "application/json",
-}
-
-export async function registerUser(userid){
+// const headers ={
+//     "Content-Type": "application/json",
+// }
+// export async function registerUser(userid){
+export async function registerUser(){
     try {
         const response = await axios.delete(
           host + "/sql-data",
