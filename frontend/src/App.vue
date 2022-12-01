@@ -14,12 +14,24 @@ import AppHeader from "./components/parts/AppHeader.vue";
 
 export default {
   name: "App",
-
   components: {
     AppFooter,
     AppHeader,
   },
 
-  data: () => ({}),
+  data: () => ({
+    CookieValue: ''
+  }),
+  methods: {
+    // サンプルコード
+    getCookie:function(key){
+      return "【Get Cookie Value】 "+this.$cookies.get('CookieValue');
+    },
+    setCookie:function(){
+      this.$cookies.config(60 * 60 * 24 * 30,'');
+      this.$cookies.set('CookieValue', this.CookieValue);
+      location.reload();
+    }
+  }
 };
 </script>
