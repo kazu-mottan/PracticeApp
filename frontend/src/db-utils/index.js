@@ -18,4 +18,4 @@ export async function registerUser(){
       } catch (err) {
         console.log(err);
       }
-};
+}
