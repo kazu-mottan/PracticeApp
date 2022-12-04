@@ -17,6 +17,19 @@
         <v-col>
           <v-card>
             <v-card-text>
+            <center>
+              <v-card-title>Registration Form</v-card-title>
+            </center>
+            <center>
+            <div>
+              <v-chip
+                label
+                link
+                outlined
+              >Already have an DeeTube account?</v-chip>
+            </div>
+          </center>
+            <br>
               <v-form ref="form" v-model="valid" lazy-validation>
                 <UserTextField :rules="nameRules" />
                 <UserPassField />
@@ -48,7 +61,8 @@ import UserTextField from "../parts/UserTextField.vue";
 import SelectCountry from "../parts/selectCountry.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
-import * as api from "../../db-utils/index.js";
+import * as api from "../../db-utils/index.js"
+import LoginPageAction from "../views/LoginPage.vue";
 export default {
   name: "App",
   components: {
@@ -58,6 +72,7 @@ export default {
     SelectMovie,
     SelectCountry,
     SelectLanguage,
+    LoginPageAction
   },
   data: () => ({
     valid: true,
@@ -73,6 +88,7 @@ export default {
     ],
     select: null,
     checkbox: false,
+    loginActionflg:false
   }),
   methods: {
     validate() {
