@@ -12,17 +12,14 @@
         class="margin-right: auto"
         mandatory
       >
-        <v-btn @click="click" value="us">
+        <v-btn @click="translate('EN')">
           <i class="flag-icon flag-icon-us"></i>
         </v-btn>
-        <v-btn @click="click" value="jp">
+        <v-btn @click="translate('JA')">
           <i class="flag-icon flag-icon-jp"></i>
         </v-btn>
-        <v-btn @click="click" value="cn">
+        <v-btn @click="translate('ZH')">
           <i class="flag-icon flag-icon-cn"></i>
-        </v-btn>
-        <v-btn @click="click" value="sa">
-          <i class="flag-icon flag-icon-sa"></i>
         </v-btn>
       </v-btn-toggle>
     </div>
@@ -36,11 +33,10 @@
                 <v-list-item v-bind = "props">
                     <v-list-item-content>
                         <p v-html="htmlText(comment.topLevelComment)"/>
-                        <!-- {{comment.topLevelComment}} -->
                     </v-list-item-content>
                 </v-list-item>
             </template>
-    
+
             <v-list-item>
                 <v-list-item-content>
                     <p v-html="htmlText(comment.replies)"/>
@@ -55,6 +51,8 @@
 
 <script>
 import * as youtube from "../../youtube/index"
+import * as deepl from "../../youtube/deepl"
+
     const count = 5
     
     export default {
@@ -78,13 +76,15 @@ import * as youtube from "../../youtube/index"
             if(msg){
                 return msg.replace(/\r?\n/g, '<br>').replace(/,/g, "")
                 }
+            },
+            async translate(value){
+              const result = await deepl.conversion(this.comments, value)
+              for(let i = 0; i < result.length; i++){
+                this.comments[0].topLevelComment = result[i].topLevelComment
+                this.comments[0].replies = result[i].replies
+              }
             }
         },
-        computed: {
-            comment(){
-                return this.comments[0]
-            }
-        }
     }
 </script>
 <style scoped>
