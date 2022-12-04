@@ -19,4 +19,5 @@ export async function registerUser(userinfo){
   } catch (err) {
     console.log(err);
   }
+
 }

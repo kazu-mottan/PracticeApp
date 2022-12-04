@@ -6,7 +6,9 @@
           <v-card>
             <!-- v-imgはコンポーネント化する -->
             <v-img
-              src="../../src/assets/landing.jpeg"
+              :aspect-ratio="aspectRatio"
+              :width="width"
+              src="https://www.shutterstock.com/image-illustration/best-internet-concept-global-business-260nw-173610971.jpg"
             >
             </v-img>
           </v-card>
@@ -77,7 +79,6 @@ import UserTextField from "../parts/UserTextField.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
 import * as api from "../../db-utils/index.js"
-
 export default {
   name: "App",
   components: {
