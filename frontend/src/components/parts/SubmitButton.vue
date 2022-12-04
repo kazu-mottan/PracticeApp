@@ -2,8 +2,6 @@
     <v-btn 
         depressed
         color="primary"
-        @click="SubmitButtonEvent"
-        
     >
         Submit
     </v-btn>

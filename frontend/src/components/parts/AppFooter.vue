@@ -2,7 +2,7 @@
   <div>
     <v-footer color="pink light-4" padless>
       <v-row justify="center">
-        <v-btn
+        <!-- <v-btn
           v-for="link in links"
           :key="link"
           color="white"
@@ -11,7 +11,7 @@
           class="my-2"
         >
           {{ link }}
-        </v-btn>
+        </v-btn> -->
         <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
           <strong>
             {{ new Date().getFullYear() }} — Project

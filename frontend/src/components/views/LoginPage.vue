@@ -28,21 +28,23 @@
 
 export default {
     name: 'LoginPage',
-    props:{
-        loginDialogflg:{
-            type:Boolean,
-            default: false,
-        }
-    },
+    // props:{
+    //     loginDialogflg:{
+    //         type:Boolean,
+    //         default: false,
+    //     }
+    // },
+    data: () => ({
+        loginDialogflg:false
+    }),
     methods:{
         submitpush:function(){
-            loginDialogflg = false
+            this.loginDialogflg = false
         },
         // loginDialog:function(value){
         //     value = true
         // }
     }
-
 };
 </script>
  
