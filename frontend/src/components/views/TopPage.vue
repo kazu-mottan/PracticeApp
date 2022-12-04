@@ -9,7 +9,7 @@
             <v-img
               :aspect-ratio="aspectRatio"
               :width="width"
-              src="../../src/assets/landing.jpeg"
+              src="https://www.shutterstock.com/image-illustration/best-internet-concept-global-business-260nw-173610971.jpg"
             >
             </v-img>
           </v-card>
@@ -48,7 +48,7 @@ import UserTextField from "../parts/UserTextField.vue";
 import SelectCountry from "../parts/selectCountry.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
-import * as api from "../../db-utils/index.js"
+import * as api from "../../db-utils/index.js";
 export default {
   name: "App",
   components: {
