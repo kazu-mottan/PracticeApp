@@ -25,12 +25,12 @@
           nav
           dense
         >
-            <v-list-item>
-              <v-list-item-title>HOME</v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title>LOGIN</v-list-item-title>
-            </v-list-item>
+          <v-list-item>
+            <v-list-item-title>HOME</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>LOGIN</v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
   </div>
