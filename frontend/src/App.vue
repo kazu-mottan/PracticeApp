@@ -24,7 +24,7 @@ export default {
   }),
   methods: {
     // サンプルコード
-    getCookie:function(key){
+    getCookie:function(){
       return "【Get Cookie Value】 "+this.$cookies.get('CookieValue');
     },
     setCookie:function(){

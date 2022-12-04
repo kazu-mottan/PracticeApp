@@ -1,7 +1,5 @@
 <template>
     <v-select
-        v-model="select"
-        :items="items"
         label="Select your language"
         :rules="[v => !!v || 'Item is required']"
         required
@@ -13,7 +11,6 @@ export default {
     name: 'SelectLanguage',
     data: () => ({
         select: null,
-        items: ['Japanese', 'English', 'Chinese', 'Arabic'],
     }),
 }
 </script>

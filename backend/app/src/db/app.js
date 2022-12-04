@@ -3,9 +3,18 @@ const mysql = require('mysql2');
 const http = require('http');
 const axios = require('axios')
 const os = require('os');
+const cors = require('cors')
 const app = express();
 const PORT = 8080
 const HOST = '0.0.0.0'
+app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE, OPTION"
+  );
+})
 
 const getLocalAddress=()=> {
   let ifacesObj = {}
@@ -65,25 +74,26 @@ app.get('/sql-data',async(req,res)=>{
   })
 })
 
-app.post('/userinput',async(req,res)=>{
+app.post('/userregister',async(req,res)=>{
   const name = req.body.name;
-  const email = req.body.email;
   const password = req.body.password;
+  const country = req.body.country;
   const lang = req.body.lang;
   const genre = req.body.genre;
-  const country = req.body.country;
-  const sql = `INSERT INTO deetube.userdb(username,country,lang,genre) VALUES ('${name}','${email}','${password}','${country}','${lang}','${genre}')`;
+  console.log(req.body)
+  return res.json(req.body);
+  const sql = `INSERT INTO deetube.userdb(username,country,lang,genre) VALUES ('${name}','${password}','${country}','${lang}','${genre}')`;
   // con.query()でsql文を実行して結果をresultに格納する
-  await connection.query(sql, (err, result) => {
-    // エラーが発生した場合はエラーメッセージを返す
-    if(err) {
-      return res.status(400).json({"error": err.message})
-    }
+  // await connection.query(sql, (err, result) => {
+  //   // エラーが発生した場合はエラーメッセージを返す
+  //   if(err) {
+  //     return res.status(400).json({"error": err.message})
+  //   }
     
-    // エラーが発生しなかった場合はsql文で取得したデータを返す
-    return res.json(result)
-    req.body.name
-  })
+  //   // エラーが発生しなかった場合はsql文で取得したデータを返す
+  //   return res.json(result)
+    
+  // })
 })
 
 
