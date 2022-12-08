@@ -43,7 +43,7 @@ services:
       - ./app:/app
 
     # 起動時のカレントフォルダを指定
-    working_dir: /app/src/db
+    working_dir: /app/src/
 
     # 起動後に実行するコマンドを指定
     command: >
