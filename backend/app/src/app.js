@@ -60,7 +60,6 @@ sleep(20000, function() {
   });
 });
 
-
 app.get('/sql-data',async(req,res)=>{
   const sql = 'select * from userdb';
   // con.query()でsql文を実行して結果をresultに格納する

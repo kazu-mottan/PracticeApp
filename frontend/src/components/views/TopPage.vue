@@ -78,7 +78,7 @@ import UserPassField from "../parts/UserPassField.vue";
 import UserTextField from "../parts/UserTextField.vue";
 import SelectLanguage from "../parts/SelectLanguage.vue";
 import SubmitButton from "../parts/SubmitButton.vue";
-import * as api from "../../db-utils/index.js"
+import * as api from "../../api/index.js"
 export default {
   name: "App",
   components: {
@@ -131,7 +131,7 @@ export default {
           'movie':this.movie,
           'lang':this.lang
       } 
-      console
+
       await api.registerUser(forminfo).then((res) => {
         if (res?.status === 200) {
             console.log(res);
